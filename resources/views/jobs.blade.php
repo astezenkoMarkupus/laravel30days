@@ -5,8 +5,9 @@
 
   <ul>
     @foreach($jobs as $job)
-      <li>
+      <li style="margin-bottom: 20px">
         <x-link href="/jobs/{{ $job['id'] }}" class="text-blue-500 hover:underline">
+          <div><em>Employer: {{ $job->employer->name }}</em></div>
           <strong>{{ $job['title'] }}:</strong> {{ $job['salary'] }} per year.
         </x-link>
       </li>
