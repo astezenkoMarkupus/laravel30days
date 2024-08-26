@@ -10,25 +10,46 @@
       <div class="border-b border-gray-900/10 pb-12">
         <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <x-form-field>
-            <x-form-label for="firstname">First Name</x-form-label>
+            <x-form-label for="first_name">First Name</x-form-label>
             <div class="mt-2">
-              <x-form-input type="text" name="firstname" id="firstname" autocomplete="given-name" required/>
-              <x-form-error name="firstname"/>
+              <x-form-input
+                  type="text"
+                  name="first_name"
+                  id="first_name"
+                  autocomplete="given-name"
+                  value="{{ old('first_name') }}"
+                  required
+              />
+              <x-form-error name="first_name"/>
             </div>
           </x-form-field>
 
           <x-form-field>
-            <x-form-label for="lastname">Last Name</x-form-label>
+            <x-form-label for="last_name">Last Name</x-form-label>
             <div class="mt-2">
-              <x-form-input type="text" name="lastname" id="lastname" autocomplete="family-name" required/>
-              <x-form-error name="lastname"/>
+              <x-form-input
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  autocomplete="family-name"
+                  value="{{ old('last_name') }}"
+                  required
+              />
+              <x-form-error name="last_name"/>
             </div>
           </x-form-field>
 
           <x-form-field>
             <x-form-label for="email">Email</x-form-label>
             <div class="mt-2">
-              <x-form-input type="email" name="email" id="email" autocomplete="email" required/>
+              <x-form-input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="email"
+                  value="{{ old('email') }}"
+                  required
+              />
               <x-form-error name="email"/>
             </div>
           </x-form-field>
@@ -36,7 +57,14 @@
           <x-form-field>
             <x-form-label for="password">Password</x-form-label>
             <div class="mt-2">
-              <x-form-input type="password" name="password" id="password" autocomplete="new-password" required/>
+              <x-form-input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value="{{ old('password') }}"
+                  autocomplete="new-password"
+                  required
+              />
               <x-form-error name="password"/>
             </div>
           </x-form-field>
@@ -49,6 +77,7 @@
                   name="password_confirmation"
                   id="password_confirmation"
                   autocomplete="new-password"
+                  value="{{ old('password_confirmation') }}"
                   required
               />
               <x-form-error name="password_confirmation"/>
