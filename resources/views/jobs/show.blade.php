@@ -7,7 +7,7 @@
     <strong>Salary:</strong> {{ $job->salary }} per year
   </div>
 
-  @can('edit-job', $job)
+  @can('edit', $job)
     <br>
     <x-link class="text-blue-500 hover:underline" href="/jobs/{{ $job->id }}/edit">Edit</x-link>
   @endcan

@@ -16,18 +16,18 @@ Route::post('/jobs', [JobController::class, 'store'])
     ->middleware('auth');
 Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
     ->middleware('auth')
-    ->can('edit-job', 'job');
+    ->can('edit', 'job');
 Route::patch('/jobs/{job}', [JobController::class, 'update'])
     ->middleware('auth')
-    ->can('edit-job', 'job');
+    ->can('edit', 'job');
 Route::delete('/jobs/{job}', [JobController::class, 'destroy'])
     ->middleware('auth')
-    ->can('delete-job', 'job');
+    ->can('edit', 'job');
 
 // Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
