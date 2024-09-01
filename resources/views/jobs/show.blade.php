@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <x-layout>
   <x-slot:title>
     Job: {{ $job->title }}
@@ -7,10 +8,11 @@
     <strong>Salary:</strong> {{ $job->salary }} per year
   </div>
 
-  <br>
-  <x-link class="text-blue-500 hover:underline" href="/jobs/{{ $job->id }}/edit">Edit</x-link>
+  @if($isAuthor)
+    <br>
+    <x-link class="text-blue-500 hover:underline" href="/jobs/{{ $job->id }}/edit">Edit</x-link>
+  @endif
 
-  <br>
-  <br>
+  <br> <br>
   <x-link class="text-blue-500 hover:underline" href="/jobs">Back to Jobs List</x-link>
 </x-layout>

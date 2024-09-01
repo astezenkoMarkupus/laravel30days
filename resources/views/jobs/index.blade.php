@@ -2,7 +2,6 @@
   <x-slot:title>
     Jobs
   </x-slot:title>
-
   <ul>
     @foreach($jobs as $job)
       <li style="margin-bottom: 20px">
